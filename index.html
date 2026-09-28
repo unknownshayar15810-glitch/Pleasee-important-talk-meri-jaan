@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Important Talk ❤️</title>
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #ffd6e7,
+    #fff0f6
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+  width: 92%;
+  max-width: 450px;
+
+  background: white;
+
+  padding: 28px 20px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 35px rgba(180, 50, 100, 0.20);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+  color: #e91e63;
+  margin-top: 5px;
+}
+
+h2 {
+  color: #d6336c;
+}
+
+p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown {
+  font-size: 90px;
+
+  font-weight: bold;
+
+  color: #e91e63;
+
+  margin: 25px 0;
+}
+
+
+/* =========================
+   QUESTION OPTIONS
+========================= */
+
+.option {
+  display: block;
+
+  width: 100%;
+
+  margin: 12px 0;
+
+  padding: 15px;
+
+  border: 2px solid #ff9fbd;
+
+  border-radius: 15px;
+
+  background: white;
+
+  color: #444;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #ffe8f0;
+}
+
+.option:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   YES BUTTON
+========================= */
+
+#yesButton {
+  background: #ff4081;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 15px;
+
+  padding: 15px 30px;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  margin: 10px;
+}
+
+
+/* =========================
+   NO BUTTON
+========================= */
+
+#noButton {
+  background: white;
+
+  color: #e91e63;
+
+  border: 2px solid #ff9fbd;
+
+  border-radius: 15px;
+
+  padding: 14px 28px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  position: fixed;
+
+  z-index: 50;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.photo-gallery {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.photo-gallery img {
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 20px rgba(180, 50, 100, 0.20);
+}
+
+.photo-gallery img:first-child {
+  grid-column: 1 / -1;
+
+  height: 300px;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-note {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0f6,
+    #ffe1ed
+  );
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+  position: fixed;
+
+  right: 15px;
+
+  bottom: 15px;
+
+  z-index: 100;
+
+  border: none;
+
+  border-radius: 50px;
+
+  padding: 12px 17px;
+
+  background: #ff4081;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.20);
+}
+
+
+/* =========================
+   FALLING HEARTS
+========================= */
+
+.heart {
+  position: fixed;
+
+  top: -40px;
+
+  font-size: 25px;
+
+  pointer-events: none;
+
+  z-index: 200;
+
+  animation-name: fall;
+
+  animation-timing-function: linear;
+
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+
+  from {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+  to {
+    transform:
+      translateY(110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   SMALL TEXT
+========================= */
+
+.small {
+  font-size: 13px;
+
+  color: #888;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     MUSIC
+================================= -->
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button
+  class="music-button"
+  onclick="toggleMusic()">
+
+  🎵 Music
+
+</button>
+
+
+
+<!-- =================================
+     OPENING SCREEN
+================================= -->
+
+<div
+  class="card"
+  id="opening">
+
+  <h1>
+    Important Talk ❤️
+  </h1>
+
+  <p>
+    Priyanshi Ji...<br>
+    pehle ek chhoti si countdown. 🥹❤️
+  </p>
+
+  <div id="countdown">
+    3
+  </div>
+
+  <p class="small">
+    Please wait... something special is coming 💗
+  </p>
+
+</div>
+
+
+
+<!-- =================================
+     QUESTIONS
+================================= -->
+
+<div
+  class="card hidden"
+  id="quiz">
+
+  <h1>
+    Hey Priyanshi ❤️
+  </h1>
+
+  <p>
+    Prashant ke baare mein kuch questions hain...
+    honestly answer karna. 👀
+  </p>
+
+  <div id="questionBox"></div>
+
+</div>
+
+
+
+<!-- =================================
+     FINAL QUESTION
+================================= -->
+
+<div
+  class="card hidden"
+  id="proposal">
+
+  <h1>
+    One Last Question... ❤️
+  </h1>
+
+  <p>
+    Priyanshi Ji, itna sab sunne ke baad...
+  </p>
+
+  <h2>
+    Will You Be Mine? 🥹❤️
+  </h2>
+
+  <button
+    id="yesButton"
+    onclick="yesClicked()">
+
+    YES ❤️
+
+  </button>
+
+  <button
+    id="noButton">
+
+    NO 😭
+
+  </button>
+
+</div>
+
+
+
+<script>
+
+/* =================================
+   MUSIC
+================================= */
+
+const music =
+  document.getElementById("music");
+
+
+function toggleMusic() {
+
+  if (music.paused) {
+
+    music.play().catch(function() {});
+
+  } else {
+
+    music.pause();
+
+  }
+
+}
+
+
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+let number = 3;
+
+const countdown =
+  document.getElementById("countdown");
+
+
+const timer = setInterval(function() {
+
+  number--;
+
+  if (number > 0) {
+
+    countdown.textContent = number;
+
+  } else {
+
+    clearInterval(timer);
+
+    countdown.textContent = "❤️";
+
+
+    setTimeout(function() {
+
+      document
+        .getElementById("opening")
+        .classList
+        .add("hidden");
+
+
+      document
+        .getElementById("quiz")
+        .classList
+        .remove("hidden");
+
+
+      showQuestion();
+
+    }, 1000);
+
+  }
+
+}, 1000);
+
+
+
+/* =================================
+   QUESTIONS
+================================= */
+
+const questions = [
+
+  {
+    question:
+      "Tumhe Prashant mein sabse achha kya lagta hai? ❤️",
+
+    options: [
+      "Uski smile 😊",
+      "Uski care 🫶",
+      "Uski personality ❤️",
+      "Sab kuch 🥹"
+    ]
+  },
+
+
+  {
+    question:
+      "Agar Prashant tumhe surprise de toh? 👀",
+
+    options: [
+      "Awww 🥹❤️",
+      "Bahut cute",
+      "Main speechless ho jaungi",
+      "Surprise mujhe bhi chahiye 😭"
+    ]
+  },
+
+
+  {
+    question:
+      "Prashant ke saath ek perfect evening? 🌅",
+
+    options: [
+      "Sunset 🌅",
+      "Long walk ❤️",
+      "Bas baatein karna 🫶",
+      "Kuch bhi, bas saath ho"
+    ]
+  },
+
+
+  {
+    question:
+      "Last question... Prashant tumhare liye? ❤️",
+
+    options: [
+      "Special ❤️",
+      "Very Special 🥹",
+      "Bahut zyada special 😭❤️",
+      "Can't explain in words 🫶"
+    ]
+  }
+
+];
+
+
+let currentQuestion = 0;
+
+
+
+/* =================================
+   SHOW QUESTION
+================================= */
+
+function showQuestion() {
+
+  const box =
+    document.getElementById("questionBox");
+
+
+  if (currentQuestion >= questions.length) {
+
+    document
+      .getElementById("quiz")
+      .classList
+      .add("hidden");
+
+
+    document
+      .getElementById("proposal")
+      .classList
+      .remove("hidden");
+
+
+    setupNoButton();
+
+    return;
+  }
+
+
+  const current =
+    questions[currentQuestion];
+
+
+  box.innerHTML = "";
+
+
+  const title =
+    document.createElement("h2");
+
+  title.textContent =
+    current.question;
+
+  box.appendChild(title);
+
+
+  current.options.forEach(function(option) {
+
+    const button =
+      document.createElement("button");
+
+    button.className = "option";
+
+    button.textContent = option;
+
+
+    button.onclick = function() {
+
+      currentQuestion++;
+
+      showQuestion();
+
+    };
+
+
+    box.appendChild(button);
+
+  });
+
+
+  const progress =
+    document.createElement("p");
+
+  progress.className = "small";
+
+  progress.textContent =
+    "Question " +
+    (currentQuestion + 1) +
+    " / " +
+    questions.length;
+
+
+  box.appendChild(progress);
+
+}
+
+
+
+/* =================================
+   NO BUTTON
+================================= */
+
+const noButton =
+  document.getElementById("noButton");
+
+
+function moveNoButton() {
+
+  const padding = 15;
+
+
+  const maxX =
+    window.innerWidth -
+    noButton.offsetWidth -
+    padding;
+
+
+  const maxY =
+    window.innerHeight -
+    noButton.offsetHeight -
+    padding;
+
+
+  const x =
+    padding +
+    Math.random() *
+    Math.max(0, maxX - padding);
+
+
+  const y =
+    padding +
+    Math.random() *
+    Math.max(0, maxY - padding);
+
+
+  noButton.style.left =
+    x + "px";
+
+
+  noButton.style.top =
+    y + "px";
+
+}
+
+
+
+function setupNoButton() {
+
+  moveNoButton();
+
+
+  noButton.addEventListener(
+    "mouseenter",
+    moveNoButton
+  );
+
+
+  noButton.addEventListener(
+    "touchstart",
+    function(event) {
+
+      event.preventDefault();
+
+      moveNoButton();
+
+    },
+    { passive: false }
+  );
+
+
+  noButton.addEventListener(
+    "click",
+    function(event) {
+
+      event.preventDefault();
+
+      moveNoButton();
+
+    }
+  );
+
+}
+
+
+
+/* =================================
+   YES BUTTON
+================================= */
+
+function yesClicked() {
+
+  noButton.style.display = "none";
+
+
+  const proposal =
+    document.getElementById("proposal");
+
+
+  proposal.innerHTML = `
+
+    <h1>
+      YAYYYYY! ❤️🥹
+    </h1>
+
+
+    <h2>
+      Thank You! 💖
+    </h2>
+
+
+    <p>
+      This little surprise was made
+      especially for you. 🫶
+    </p>
+
+
+    <div class="photo-gallery">
+
+      <img
+        src="photo1.jpg"
+        alt="Memory 1"
+      >
+
+      <img
+        src="photo2.jpg"
+        alt="Memory 2"
+      >
+
+      <img
+        src="photo3.jpg"
+        alt="Memory 3"
+      >
+
+      <img
+        src="photo4.jpg"
+        alt="Memory 4"
+      >
+
+    </div>
+
+
+    <div class="final-note">
+
+      <h2>
+        Thank Youuu! ❤️
+      </h2>
+
+      <p>
+        Thank you for going through
+        this little surprise. 🫶
+      </p>
+
+      <p>
+        <b>
+          Don't forget to take a screenshot! 📱❤️
+        </b>
+      </p>
+
+    </div>
+
+  `;
+
+
+  createHearts();
+
+}
+
+
+
+/* =================================
+   FALLING HEARTS
+================================= */
+
+function createHearts() {
+
+  for (
+    let i = 0;
+    i < 70;
+    i++
+  ) {
+
+    const heart =
+      document.createElement("div");
+
+
+    heart.className =
+      "heart";
+
+
+    heart.textContent =
+      Math.random() > 0.5
+      ? "❤️"
+      : "💖";
+
+
+    heart.style.left =
+      Math.random() * 100 +
+      "vw";
+
+
+    heart.style.animationDuration =
+      (2 + Math.random() * 3) +
+      "s";
+
+
+    heart.style.animationDelay =
+      Math.random() * 1.5 +
+      "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(function() {
+
+      heart.remove();
+
+    }, 6000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
